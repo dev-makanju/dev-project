@@ -19,7 +19,7 @@ jobs:
         run: | 
           npm install -g @vue/cli yarn
           npm ci
-      - name: Test and Build
+      - name: Test and Build App
         run: |
           npm run test
           npm run build
