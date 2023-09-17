@@ -12,14 +12,15 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Create Node Environment
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: 18
       - name: Install Packages and Build Applications
         run: | 
           npm install -g @vue/cli yarn
-          yarn install
-          yarn build
+          npm ci
+          npm run test
+          npm build
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
         env: 
